@@ -6,9 +6,9 @@ export const GET = async (req, { params }) => {
     if (!user) {
         return NextResponse.json({ error: "User parameter is missing" }, { status: 400 });
     }
-
+     console.log("User:", user);
     const supabase = createClient();
-
+    console.log("Supabase:", supabase);
     const { data, error } = await supabase
         .from("Crew")
         .select("*")
